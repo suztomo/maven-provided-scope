@@ -69,6 +69,7 @@ public class AppTest {
 
     // This fails because the node does not have provided dependencies. It includes optional
     // dependencies:
+    //   [dom4j:dom4j:jar:1.6.1 (compile?), jdom:jdom:jar:1.0 (compile?), xom:xom:jar:1.0 (compile?)]
     Truth.assertThat(node.getChildren()).hasSize(5);
   }
 }
