@@ -67,8 +67,7 @@ public class AppTest {
     // - junit (test)
     // https://search.maven.org/artifact/jaxen/jaxen/1.1.6/bundle
 
-    // This fails because the node does not have provided dependencies. It includes optional
-    // dependencies:
+    // This fails because the node does not have provided dependencies. The content is:
     //   [dom4j:dom4j:jar:1.6.1 (compile?), jdom:jdom:jar:1.0 (compile?), xom:xom:jar:1.0 (compile?)]
     Truth.assertThat(node.getChildren()).hasSize(5);
   }
