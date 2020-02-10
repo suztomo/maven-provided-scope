@@ -1,8 +1,10 @@
 package suztomo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
+import com.google.common.truth.Truth;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
@@ -66,7 +68,7 @@ public class AppTest {
     // https://search.maven.org/artifact/jaxen/jaxen/1.1.6/bundle
 
     // This fails because the node does not have provided dependencies. It includes optional
-    // dependencies.
-    assertEquals(5, node.getChildren());
+    // dependencies:
+    Truth.assertThat(node.getChildren()).hasSize(5);
   }
 }

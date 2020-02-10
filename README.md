@@ -9,10 +9,10 @@ should be included in the graph when they are direct dependencies.
 You can reproduce the problem by `mvn test`:
 
 ``` 
-[ERROR] Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.168 s <<< FAILURE! - in suztomo.AppTest
-[ERROR] shouldIncludeProvidedScope(suztomo.AppTest)  Time elapsed: 0.156 s  <<< FAILURE!
-java.lang.AssertionError: expected:<5> but was:<[dom4j:dom4j:jar:1.6.1 (compile?), jdom:jdom:jar:1.0 (compile?), xom:xom:jar:1.0 (compile?)]>
-	at suztomo.AppTest.shouldIncludeProvidedScope(AppTest.java:78)
+[ERROR]   AppTest.shouldIncludeProvidedScope:72 value of    : iterable.size()
+expected    : 5
+but was     : 3
+iterable was: [dom4j:dom4j:jar:1.6.1 (compile?), jdom:jdom:jar:1.0 (compile?), xom:xom:jar:1.0 (compile?)]
 ```
 
 # Analysis
