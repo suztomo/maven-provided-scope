@@ -1,8 +1,5 @@
 package suztomo;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-import static org.junit.Assert.assertTrue;
 
 import com.google.common.truth.Truth;
 import java.nio.file.Path;
@@ -18,7 +15,6 @@ import org.eclipse.aether.graph.Dependency;
 import org.eclipse.aether.graph.DependencyNode;
 import org.eclipse.aether.impl.DefaultServiceLocator;
 import org.eclipse.aether.repository.LocalRepository;
-import org.eclipse.aether.repository.RemoteRepository;
 import org.eclipse.aether.spi.connector.RepositoryConnectorFactory;
 import org.eclipse.aether.spi.connector.transport.TransporterFactory;
 import org.eclipse.aether.transport.file.FileTransporterFactory;
@@ -69,6 +65,6 @@ public class AppTest {
 
     // This fails because the node does not have provided dependencies. The content is:
     //   [dom4j:dom4j:jar:1.6.1 (compile?), jdom:jdom:jar:1.0 (compile?), xom:xom:jar:1.0 (compile?)]
-    Truth.assertThat(node.getChildren()).hasSize(5);
+    Truth.assertThat(node.getChildren()).hasSize(6);
   }
 }
