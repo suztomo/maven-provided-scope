@@ -4,16 +4,20 @@ The dependency graph from RepositorySystem.collectDependencies does
 not have direct provided dependencies. I expect provided dependencies
 should be included in the graph when they are direct dependencies.
 
-# Test Failure
+# Failure on TestDefaultDependencyCollector
 
 You can reproduce the problem by `mvn test`:
 
 ``` 
-[ERROR]   AppTest.shouldIncludeProvidedScope:72 value of    : iterable.size()
+[ERROR]   TestDefaultDependencyCollector.shouldIncludeProvidedScope:72 value of    : iterable.size()
 expected    : 5
 but was     : 3
 iterable was: [dom4j:dom4j:jar:1.6.1 (compile?), jdom:jdom:jar:1.0 (compile?), xom:xom:jar:1.0 (compile?)]
 ```
+
+# Success on TestProjectDependencyResolver
+
+This succeeds by providing all 6 dependencies listed in jaxen:1.1.6.
 
 # Analysis
 

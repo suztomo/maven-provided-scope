@@ -136,6 +136,7 @@ public class TestProjectDependencyResolver {
     DependencyResolutionResult resolutionResult = resolver.resolve(resolutionRequest);
     DependencyNode node = resolutionResult.getDependencyGraph();
 
+    // This passes.
     // [dom4j:dom4j:jar:1.6.1 (compile?), jdom:jdom:jar:1.0 (compile?), xml-apis:xml-apis:jar:1.3.02 (provided), xerces:xercesImpl:jar:2.6.2 (provided), xom:xom:jar:1.0 (compile?), junit:junit:jar:3.8.2 (test)]
     Truth.assertThat(node.getChildren()).hasSize(6);
   }
