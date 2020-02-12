@@ -15,11 +15,7 @@ but was     : 3
 iterable was: [dom4j:dom4j:jar:1.6.1 (compile?), jdom:jdom:jar:1.0 (compile?), xom:xom:jar:1.0 (compile?)]
 ```
 
-# Success on TestProjectDependencyResolver
-
-This succeeds by providing all 6 dependencies listed in jaxen:1.1.6.
-
-# Analysis
+## Analysis
 
 [MavenRepositorySystemUtils.newSession][3] creates
 ScopedDependencySelector("test", "provided")
@@ -34,6 +30,14 @@ deriveChildSelector before using the selector from the session.
 Therefore, ScopeDependencySelector always has transitive=true ( to
 exclude provided dependencies) when it's used with
 DefaultDependencyCollector.
+
+# Success on TestProjectDependencyResolver
+
+This succeeds by providing all 6 dependencies listed in jaxen:1.1.6.
+
+# Comparison between DefaultDependencyCollector and ProjectDependencyResolver
+
+![image](https://user-images.githubusercontent.com/28604/74356907-19650600-4d8d-11ea-82cb-3a4a9942291a.png)
 
 [1]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/blob/50da79355e042c5ff14ec72230cc6edbddcf8436/dependencies/src/main/java/com/google/cloud/tools/opensource/dependencies/RepositoryUtility.java#L112
 [2]: https://github.com/GoogleCloudPlatform/cloud-opensource-java/blob/50da79355e042c5ff14ec72230cc6edbddcf8436/dependencies/src/main/java/com/google/cloud/tools/opensource/dependencies/DependencyGraphBuilder.java#L179
